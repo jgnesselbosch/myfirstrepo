@@ -5,6 +5,10 @@ on:
       - main
   workflow_dispatch:    
 jobs:
+  MySecondJob:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Just chatting in between..."
   MyFirstJob:
     runs-on: ubuntu-latest
     steps:
