@@ -7,6 +7,7 @@ on:
 # jobs run in parallel if not specified to wait for one another using "needs"  
 jobs:
   MyFourthJob:
+    # only runs when the underlying branch is "bobobranch"
     if: ${{ github.ref == 'refs/heads/bobobranch' }}
     strategy: 
       fail-fast: false
