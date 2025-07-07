@@ -27,6 +27,16 @@ jobs:
       - run: echo "Just chittchatting in between..."
       - name: some dull name here
         run: echo "Just wanted to mention that an oorange is just a juicy pumpkin."
+      - name: Set color
+        id: color-generator
+        run: echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
+      - name: Get color
+        run: echo "${{ steps.color-generator.outputs.SELECTED_COLOR }}"
+
+  id: color-generator
+  run: echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
+- name: Get color
+  run: echo "${{ steps.color-generator.outputs.SELECTED_COLOR }}"
   MySecondJob:
     runs-on: ubuntu-latest
     needs: MyFirstJob
