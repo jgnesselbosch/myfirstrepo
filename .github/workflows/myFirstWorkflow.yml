@@ -28,7 +28,7 @@ jobs:
       - name: some dull name here
         run: echo "Just wanted to mention that an oorange is just a juicy pumpkin."
       - name: summup  
-        run: echo '<h1>Great feature!</h1>' >> $GITHUB_STEP_SUMMARY
+        run: echo "<h1>Great feature!</h1>" >> $GITHUB_STEP_SUMMARY
       - name: Set color
         id: color-generator
         run: echo "SELECTED_COLOR=green" >> "$GITHUB_OUTPUT"
