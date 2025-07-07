@@ -7,6 +7,7 @@ on:
 # jobs run in parallel if not specified to wait for one another using "needs"  
 jobs:
   MyFourthJob:
+    if: ${{ github.ref == 'refs/heads/main' }}
     strategy: 
       fail-fast: false
       max-parallel: 2
