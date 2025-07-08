@@ -4,6 +4,11 @@ on:
     branches: 
       - main
   workflow_dispatch: 
+    inputs:
+      comment:
+        description: Add a comment
+        required: false
+        default: "no comment provided"
 # jobs run in parallel if not specified to wait for one another using "needs"  
 jobs:
   MyFourthJob:
@@ -15,6 +20,7 @@ jobs:
       matrix:
         first_name: ["hans", "karl"]
         last_name: ["meier", "mueller", "schulze"]
+    #     
     runs-on: ubuntu-latest
     needs: MyThirdJob
     steps:
