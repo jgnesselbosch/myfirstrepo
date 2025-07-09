@@ -65,7 +65,9 @@ jobs:
       - run: echo "Hello World !"
       - name: Checkout
         uses: actions/checkout@v4.2.2
-      
+        with:
+          ref: "main"
+          fetch-depth: "1"
       - name: List all files in the repo
         run: |
           echo "The repo ${{ github.repository }}" contains the following files
