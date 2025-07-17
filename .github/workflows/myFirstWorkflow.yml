@@ -72,4 +72,6 @@ jobs:
         run: |
           echo "The repo ${{ github.repository }}" contains the following files
           tree -a 
+      - name: Display github context
+        run: echo "${{ toJSON(github) }}"
  
